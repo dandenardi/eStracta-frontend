@@ -34,7 +34,7 @@ function CompanyList() {
             .catch((error) => {
                 console.error("ERROR retrieving number of results", error)
             })
-    })
+    }, [])
 
     useEffect(() => {
         api.get('/companies', {
@@ -124,9 +124,9 @@ function CompanyList() {
                 pageCount={Math.ceil(numberOfCompanies / itemsPerPage)}
                 onPageChange={handlePageChange}
                 breakLabel="..."
-                nextLabel="next >"
+                nextLabel="próxima >"
                 pageRangeDisplayed={5}
-                previousLabel="< previous"
+                previousLabel="< anterior"
                 renderOnZeroPageCount={null}
                 activeClassName={'item active '}
                 breakClassName={'item break-me '}
